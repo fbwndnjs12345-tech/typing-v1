@@ -133,6 +133,17 @@ function videoId(url){try{const u=new URL(url);if(u.hostname==='youtu.be')return
 $('urlForm').addEventListener('submit',e=>{e.preventDefault();const id=videoId($('youtubeUrl').value.trim());if(!id||!/^[\w-]{11}$/.test(id)){toast('올바른 YouTube 영상 주소를 입력해 주세요.');return}const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+id+'?playsinline=1&rel=0';frame.title='YouTube 공식 영상 플레이어';frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;const holder=$('playerFrame');holder.innerHTML='';holder.appendChild(frame);toast('공식 플레이어를 연결했어요. 재생은 영상에서 직접 눌러 주세요.')});
 $('howBtn').addEventListener('click',()=>toast('곡 선택 → 문장 입력 → 정확도 확인. 영상은 URL 연결 후 플레이어에서 직접 재생해요.'));
 renderLyric();
+
+const keyLabels={Space:'SPACE',Enter:'ENTER',Backspace:'⌫',Tab:'TAB',ShiftLeft:'SHIFT',ShiftRight:'SHIFT',ControlLeft:'CTRL',ControlRight:'CTRL',AltLeft:'ALT',AltRight:'ALT',CapsLock:'CAPS',ArrowUp:'↑',ArrowDown:'↓',ArrowLeft:'←',ArrowRight:'→'};
+function highlightKey(code,label){
+ document.querySelectorAll('.key.active').forEach(k=>k.classList.remove('active'));
+ const el=document.querySelector('.key[data-code="'+code+'"]');
+ if(el){el.classList.add('active');el.classList.remove('pressed');void el.offsetWidth;el.classList.add('pressed')}
+ $('liveKey').textContent=label||keyLabels[code]||code.replace(/^Key/,'').replace(/^Digit/,'');
+}
+document.addEventListener('keydown',e=>{if(e.isComposing)return;const target=document.activeElement;if(target&&['INPUT','TEXTAREA'].includes(target.tagName))highlightKey(e.code,e.key===' '?'SPACE':e.key.length===1?e.key.toUpperCase():keyLabels[e.code]||e.key);else if(e.code==='Space')highlightKey(e.code,'SPACE')});
+document.addEventListener('keyup',e=>{const el=document.querySelector('.key[data-code="'+e.code+'"]');if(el)el.classList.remove('pressed')});
+
 </script>
 </body>
 </html>
