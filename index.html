@@ -141,7 +141,7 @@ function highlightKey(code,label){
  if(el){el.classList.add('active');el.classList.remove('pressed');void el.offsetWidth;el.classList.add('pressed')}
  $('liveKey').textContent=label||keyLabels[code]||code.replace(/^Key/,'').replace(/^Digit/,'');
 }
-document.addEventListener('keydown',e=>{if(e.isComposing)return;const target=document.activeElement;if(target&&['INPUT','TEXTAREA'].includes(target.tagName))highlightKey(e.code,e.key===' '?'SPACE':e.key.length===1?e.key.toUpperCase():keyLabels[e.code]||e.key);else if(e.code==='Space')highlightKey(e.code,'SPACE')});
+document.addEventListener('keydown',e=>{const target=document.activeElement;if(target&&['INPUT','TEXTAREA'].includes(target.tagName))highlightKey(e.code,e.key===' '?'SPACE':e.key.length===1?e.key.toUpperCase():keyLabels[e.code]||e.key);else if(e.code==='Space')highlightKey(e.code,'SPACE')});
 document.addEventListener('keyup',e=>{const el=document.querySelector('.key[data-code="'+e.code+'"]');if(el)el.classList.remove('pressed')});
 
 </script>
