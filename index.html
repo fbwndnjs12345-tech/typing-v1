@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f5ff">
+<title>LYRICKEY — 노래 가사 타자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#201b35;--muted:#858096;--purple:#7657f6;--purple2:#a18cff;--line:#ece9f5;--paper:#fff;--bg:#f8f7fc;--mint:#d8fae8;--pink:#ffe1ed;--yellow:#fff1c9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,'DM Sans',sans-serif}button,input,textarea{font:inherit}button{cursor:pointer;border:0}.app{max-width:1220px;margin:auto;padding:0 30px 50px}.topbar{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:900;letter-spacing:-.8px}.logo{height:38px;width:38px;border-radius:13px;background:var(--purple);display:grid;place-items:center;color:white;box-shadow:0 7px 18px #7657f633}.logo svg{width:21px}.nav{display:flex;gap:28px;align-items:center;color:#777187;font-size:14px;font-weight:700}.nav a{color:inherit;text-decoration:none}.nav a.active{color:var(--purple)}.profile{background:#fff;border:1px solid var(--line);padding:9px 14px;border-radius:99px;font-size:13px;font-weight:800}.hero{padding:46px 0 32px;display:flex;align-items:center;justify-content:space-between;gap:30px}.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;background:#eeeaff;border-radius:99px;color:#6849ed;font-size:11px;font-weight:900;letter-spacing:1px}.eyebrow span{width:6px;height:6px;border-radius:50%;background:#7657f6}.hero h1{font-size:clamp(34px,4vw,51px);line-height:1.13;letter-spacing:-2.7px;margin:17px 0 12px;font-weight:900}.hero h1 em{font-style:normal;color:var(--purple)}.hero p{color:var(--muted);font-size:15px;line-height:1.75;margin:0}.hero-art{width:190px;height:154px;flex-shrink:0;border-radius:30px;background:linear-gradient(140deg,#ded5ff,#f1eaff 60%,#d9f8ee);position:relative;overflow:hidden;display:grid;place-items:center}.disc{width:100px;height:100px;border-radius:50%;background:repeating-radial-gradient(circle,#26213c 0 2px,#39314f 3px 5px);box-shadow:0 12px 22px #4c3c7850;display:grid;place-items:center;transform:rotate(-18deg)}.disc:after{content:'♫';display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#a28cff;color:white;font-size:20px}.spark{position:absolute;color:#fff;font-size:25px}.spark.s1{top:20px;right:24px}.spark.s2{bottom:16px;left:20px;color:#7657f6}.stats{display:flex;gap:10px;margin-bottom:30px}.stat{background:white;border:1px solid var(--line);border-radius:16px;padding:15px 18px;min-width:145px}.stat strong{font-size:21px;letter-spacing:-.7px;display:block}.stat span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.85fr);gap:20px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 7px 30px #2d1a5910}.panel-head{padding:22px 24px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-head h2{margin:0;font-size:18px;letter-spacing:-.5px}.sub{font-size:12px;color:var(--muted);margin-top:6px}.tag{padding:7px 10px;background:#f2efff;color:#7053f2;border-radius:8px;font-size:11px;font-weight:800}.search-wrap{padding:0 24px 18px}.search{width:100%;padding:13px 15px 13px 42px;border:1px solid var(--line);border-radius:12px;outline:none;background:#fbfaff;color:var(--ink)}.search:focus,textarea:focus,input:focus{border-color:#a99aff;box-shadow:0 0 0 3px #7657f617}.searchbox{position:relative}.searchbox svg{position:absolute;left:14px;top:13px;width:17px;color:#a29caf}.filters{display:flex;gap:7px;flex-wrap:wrap;padding:0 24px 17px}.filter{padding:8px 12px;border-radius:99px;background:#f6f5fa;color:#817b91;font-size:12px;font-weight:800}.filter.active{background:var(--ink);color:white}.song-list{padding:0 16px 16px;display:grid;gap:8px}.song{display:flex;align-items:center;gap:13px;padding:12px;border:1px solid transparent;border-radius:15px;transition:.18s;cursor:pointer}.song:hover{background:#faf9ff}.song.selected{border-color:#d9d0ff;background:#f8f6ff}.cover{height:54px;width:54px;border-radius:13px;display:grid;place-items:center;font-size:23px;flex-shrink:0}.cover.c1{background:linear-gradient(135deg,#ffd7e4,#ff9fc4)}.cover.c2{background:linear-gradient(135deg,#d6f8ec,#a2e8d2)}.cover.c3{background:linear-gradient(135deg,#e0dcff,#aca0ff)}.cover.c4{background:linear-gradient(135deg,#ffedbe,#ffc97b)}.cover.c5{background:linear-gradient(135deg,#d9eaff,#a8c9ff)}.song-info{min-width:0;flex:1}.song-info strong{display:block;font-size:14px;margin-bottom:5px}.song-info span{color:var(--muted);font-size:12px}.song-meta{display:flex;flex-direction:column;align-items:flex-end;gap:6px;color:#8e889f;font-size:11px}.difficulty{font-size:10px;font-weight:800;padding:4px 7px;border-radius:6px;background:#f2f0f8;color:#7c748f}.right-col{display:grid;gap:18px}.player-box{padding:0 20px 20px}.player-frame{background:#171526;border-radius:15px;overflow:hidden;aspect-ratio:16/9;display:grid;place-items:center;color:white;position:relative}.player-frame iframe{width:100%;height:100%;border:0}.player-empty{text-align:center;padding:22px}.play-icon{width:48px;height:48px;margin:0 auto 12px;border-radius:50%;background:#ffffff20;display:grid;place-items:center}.player-empty strong{display:block;font-size:14px}.player-empty p{font-size:12px;line-height:1.6;color:#c3bfd4}.url-form{display:flex;gap:7px;margin-top:12px}.url-form input{min-width:0;flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;font-size:12px;outline:none}.mini-btn{padding:0 13px;border-radius:10px;background:var(--purple);color:white;font-size:12px;font-weight:800}.hint{font-size:11px;color:var(--muted);line-height:1.55;margin:10px 2px 0}.typing-panel{padding-bottom:20px}.typing-head{padding:21px 23px 15px;display:flex;justify-content:space-between;align-items:center}.typing-head h2{margin:0;font-size:17px}.status-pill{display:flex;gap:6px;align-items:center;font-size:11px;color:#6f58e8;font-weight:800}.status-pill:before{content:'';height:6px;width:6px;border-radius:50%;background:#8c75ff}.typing-content{padding:0 23px}.lyric-box{background:#faf9fe;border:1px solid #eeeaf8;border-radius:15px;padding:20px;margin-bottom:13px}.lyric-label{font-size:10px;color:#9b94ad;font-weight:900;letter-spacing:1.2px;margin-bottom:12px}.lyric-text{font-size:20px;line-height:1.9;letter-spacing:.1px;font-weight:700;word-break:keep-all}.lyric-text .done{color:var(--purple)}.lyric-text .current{background:#eae4ff;border-radius:4px;box-shadow:0 0 0 2px #eae4ff}.lyric-text .wrong{color:#e74d79;background:#ffe5ed;border-radius:4px}.typing-input{width:100%;min-height:94px;resize:vertical;border:1px solid var(--line);border-radius:13px;padding:14px;outline:none;font-size:14px;line-height:1.8;color:var(--ink)}.typing-input::placeholder{color:#b0aabd}.typing-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px}.helper{font-size:11px;color:var(--muted)}.primary{background:var(--purple);color:white;padding:12px 17px;border-radius:11px;font-size:12px;font-weight:900;box-shadow:0 6px 15px #7657f62b}.primary:hover,.mini-btn:hover{background:#6343ec}.secondary{background:#f2f0f8;color:#69617d;padding:12px 15px;border-radius:11px;font-size:12px;font-weight:800}.button-row{display:flex;gap:7px}.progress-wrap{padding:0 23px;margin-top:17px}.progress-label{display:flex;justify-content:space-between;color:#918ba1;font-size:11px;margin-bottom:8px}.progress{height:5px;background:#efedf6;border-radius:9px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#7657f6,#b29fff);transition:width .2s}.result{display:none;margin:15px 23px 0;padding:14px 15px;border-radius:13px;background:#effbf5;border:1px solid #d5f5e5;font-size:13px;color:#286e50}.result strong{font-size:18px;margin-right:7px}.bottom-note{margin:23px 0 0;text-align:center;color:#aaa4b7;font-size:11px;line-height:1.7}.bottom-note a{color:#8a7ae1;text-decoration:none}.empty-results{padding:25px;text-align:center;color:var(--muted);font-size:13px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#27213c;color:white;padding:12px 17px;border-radius:12px;font-size:13px;transition:.2s;box-shadow:0 8px 25px #201b3540}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.app{padding:0 18px 35px}.nav{gap:14px}.hero-art{width:145px;height:130px}.layout{grid-template-columns:1fr}.right-col{grid-template-columns:1fr 1fr;align-items:start}.stats{flex-wrap:wrap}.stat{flex:1;min-width:110px}}@media(max-width:580px){.app{padding:0 13px 30px}.topbar{height:68px}.nav a:not(.active){display:none}.brand{font-size:18px}.profile{font-size:11px;padding:8px 10px}.hero{padding:31px 0 22px}.hero h1{font-size:36px}.hero-art{width:95px;height:95px;border-radius:22px}.disc{width:62px;height:62px}.disc:after{width:24px;height:24px;font-size:14px}.stats{gap:7px;margin-bottom:20px}.stat{padding:12px;min-width:0}.stat strong{font-size:17px}.stat span{font-size:10px}.panel-head{padding:19px 17px 15px}.search-wrap{padding:0 17px 15px}.filters{padding:0 17px 14px}.song-list{padding:0 10px 12px}.right-col{grid-template-columns:1fr}.typing-head{padding:19px 17px 14px}.typing-content{padding:0 17px}.lyric-text{font-size:17px}.lyric-box{padding:16px}.progress-wrap{padding:0 17px}.result{margin-left:17px;margin-right:17px}.typing-foot{align-items:flex-start;flex-direction:column}.button-row{width:100%}.button-row button{flex:1}.helper{line-height:1.6}.hero p{font-size:13px}.spark{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <a class="brand" href="#" aria-label="LYRICKEY 홈" style="text-decoration:none;color:inherit"><span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>LYRICKEY<span style="color:#9a91b0;font-size:11px;letter-spacing:1px;margin-left:1px">beta</span></a>
+  <nav class="nav"><a href="#songs" class="active">곡 탐색</a><a href="#typing">타자 연습</a><a href="#player">플레이어</a></nav>
+  <button class="profile" id="howBtn">사용 방법 ↗</button>
+</header>
+<section class="hero">
+  <div><div class="eyebrow"><span></span> TYPE YOUR FAVORITE SONGS</div><h1>좋아하는 노래로<br><em>타자 실력</em>을 키워봐.</h1><p>가사를 따라 입력하고, 정확도와 타수를 확인해 봐요.<br>음악은 공식 YouTube 플레이어에서 직접 재생할 수 있어요.</p></div>
+  <div class="hero-art" aria-hidden="true"><span class="spark s1">✦</span><div class="disc"></div><span class="spark s2">♫</span></div>
+</section>
+<div class="stats">
+  <div class="stat"><strong id="statWpm">0 <small style="font-size:11px;color:#948ca5">타/분</small></strong><span>현재 타수</span></div>
+  <div class="stat"><strong id="statAccuracy">100%</strong><span>입력 정확도</span></div>
+  <div class="stat"><strong id="statPlayed">0</strong><span>완료한 연습</span></div>
+</div>
+<main class="layout">
+  <section class="panel" id="songs">
+    <div class="panel-head"><div><h2>오늘의 연습곡</h2><div class="sub">곡을 고르고 가사 타자를 시작해 보세요</div></div><span class="tag">SONG PICK</span></div>
+    <div class="search-wrap"><div class="searchbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" class="search" placeholder="곡 제목 또는 아티스트 검색" autocomplete="off"></div></div>
+    <div class="filters"><button class="filter active" data-filter="all">전체</button><button class="filter" data-filter="easy">입문</button><button class="filter" data-filter="normal">보통</button><button class="filter" data-filter="hard">도전</button></div>
+    <div class="song-list" id="songList">
+      <div class="song selected" data-id="0" data-diff="easy"><div class="cover c1">🌷</div><div class="song-info"><strong>봄날의 연습</strong><span>LYRICKEY 샘플 · 연습용 문장</span></div><div class="song-meta"><span>1:24</span><span class="difficulty">입문</span></div></div>
+      <div class="song" data-id="1" data-diff="normal"><div class="cover c2">🌿</div><div class="song-info"><strong>초록빛 순간</strong><span>LYRICKEY 샘플 · 연습용 문장</span></div><div class="song-meta"><span>1:36</span><span class="difficulty">보통</span></div></div>
+      <div class="song" data-id="2" data-diff="hard"><div class="cover c3">🌙</div><div class="song-info"><strong>밤하늘의 편지</strong><span>LYRICKEY 샘플 · 연습용 문장</span></div><div class="song-meta"><span>1:48</span><span class="difficulty">도전</span></div></div>
+      <div class="song" data-id="3" data-diff="normal"><div class="cover c4">☀️</div><div class="song-info"><strong>빛나는 하루</strong><span>LYRICKEY 샘플 · 연습용 문장</span></div><div class="song-meta"><span>1:18</span><span class="difficulty">보통</span></div></div>
+      <div class="song" data-id="4" data-diff="hard"><div class="cover c5">💫</div><div class="song-info"><strong>우리의 우주</strong><span>LYRICKEY 샘플 · 연습용 문장</span></div><div class="song-meta"><span>1:42</span><span class="difficulty">도전</span></div></div>
+    </div>
+  </section>
+  <div class="right-col">
+    <section class="panel" id="player">
+      <div class="panel-head"><div><h2>공식 음악 플레이어</h2><div class="sub">YouTube 링크로 직접 연결</div></div><span class="tag">PLAYER</span></div>
+      <div class="player-box"><div class="player-frame" id="playerFrame"><div class="player-empty"><div class="play-icon">▶</div><strong>재생할 공식 영상 연결하기</strong><p>YouTube 영상 주소를 붙여 넣으면<br>이곳에서 직접 재생할 수 있어요.</p></div></div>
+      <form class="url-form" id="urlForm"><input id="youtubeUrl" placeholder="YouTube 영상 URL" aria-label="YouTube 영상 URL"><button class="mini-btn" type="submit">연결</button></form>
+      <p class="hint">공식 영상만 연결해 주세요. 영상 재생은 플레이어에서 직접 시작합니다. 타자 완료로 영상 재생을 잠금 해제하거나 자동 시작하지 않습니다.</p></div>
+    </section>
+    <section class="panel typing-panel" id="typing">
+      <div class="typing-head"><div><h2>타자 연습</h2><div class="sub">아래 문장을 그대로 입력해 보세요</div></div><span class="status-pill" id="typingStatus">연습 준비</span></div>
+      <div class="typing-content">
+        <div class="lyric-box"><div class="lyric-label">PRACTICE TEXT · SAMPLE</div><div class="lyric-text" id="lyricText" aria-live="polite"></div></div>
+        <textarea class="typing-input" id="typingInput" placeholder="여기에 문장을 입력하세요…" spellcheck="false" autocapitalize="off"></textarea>
+        <div class="typing-foot"><div class="helper">직접 입력한 문장으로 연습하려면 아래에서 바꿀 수 있어요.</div><div class="button-row"><button class="secondary" id="editText">문장 바꾸기</button><button class="primary" id="resetBtn">다시 시작 ↻</button></div></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-label"><span>진행률</span><span id="progressText">0%</span></div><div class="progress"><div id="progressBar"></div></div></div>
+      <div class="result" id="result"><strong id="resultWpm">0타/분</strong><span id="resultMessage">완료했어요!</span></div>
+    </section>
+  </div>
+</main>
+<p class="bottom-note">LYRICKEY · 노래 가사 타자 연습 베타<br>현재 곡 목록은 실제 음원·가사가 아닌 샘플 문장입니다. 상용 서비스 전에는 가사 및 음원 이용 권리를 별도로 확인해야 합니다.</p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const samples=[
+ {title:'봄날의 연습',text:'오늘은 좋아하는 노래를 들으며 천천히 타자를 연습해요. 작은 한 걸음이 모여 멋진 실력이 될 거예요.'},
+ {title:'초록빛 순간',text:'창문 사이로 들어온 햇살이 책상 위에 조용히 내려앉고 새로운 하루가 시작돼요.'},
+ {title:'밤하늘의 편지',text:'수많은 별들 사이에서 나만의 속도로 한 글자씩 마음을 적어 내려가요.'},
+ {title:'빛나는 하루',text:'서두르지 않아도 괜찮아 오늘의 나는 어제보다 조금 더 앞으로 나아가고 있어.'},
+ {title:'우리의 우주',text:'서로 다른 작은 빛들이 모여 밤하늘을 채우듯 우리의 이야기도 천천히 빛나요.'}
+];
+let selected=0, startedAt=0, completed=0, activeFilter='all', customText=null, lastInput='';
+const $=id=>document.getElementById(id);
+function getText(){return customText!==null?customText:samples[selected].text}
+function renderLyric(){
+ const target=getText(), typed=$('typingInput').value;
+ $('lyricText').innerHTML='';
+ [...target].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;if(i<typed.length)s.className=typed[i]===ch?'done':'wrong';else if(i===typed.length)s.className='current';$('lyricText').appendChild(s)});
+ const pct=target.length?Math.min(100,Math.round(typed.length/target.length*100)):0;
+ $('progressBar').style.width=pct+'%';$('progressText').textContent=pct+'%';
+ let correct=0;for(let i=0;i<Math.min(typed.length,target.length);i++)if(typed[i]===target[i])correct++;
+ $('statAccuracy').textContent=(typed.length?Math.round(correct/typed.length*100):100)+'%';
+ const elapsed=startedAt?Math.max(1,(Date.now()-startedAt)/60000):0;
+ const wpm=elapsed?Math.round(typed.length/elapsed):0;$('statWpm').innerHTML=wpm+' <small style="font-size:11px;color:#948ca5">타/분</small>';
+ if(typed.length===target.length&&target.length>0&&typed===target){
+  $('typingStatus').textContent='완료';$('result').style.display='block';$('resultWpm').textContent=wpm+'타/분';$('resultMessage').textContent='정확도 '+$('statAccuracy').textContent+' · 연습 완료!';
+  if(lastInput!==target){completed++;$('statPlayed').textContent=completed;lastInput=target}
+ }else{$('typingStatus').textContent=typed.length?'입력 중':'연습 준비';$('result').style.display='none';if(typed.length>target.length)$('typingStatus').textContent='문장 길이 초과'}
+}
+function reset(){ $('typingInput').value='';startedAt=0;lastInput='';$('result').style.display='none';renderLyric();$('typingInput').focus()}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+$('typingInput').addEventListener('input',()=>{if($('typingInput').value.length&&!startedAt)startedAt=Date.now();renderLyric()});
+$('resetBtn').addEventListener('click',reset);
+$('editText').addEventListener('click',()=>{const value=prompt('연습할 문장을 입력하세요. (가사 사용 권리가 있는 문장이나 직접 작성한 문장을 이용해 주세요.)',getText());if(value===null)return;if(!value.trim()){toast('문장을 한 글자 이상 입력해 주세요.');return}customText=value.trim();reset();toast('연습 문장을 바꿨어요.')});
+document.querySelectorAll('.song').forEach(el=>el.addEventListener('click',()=>{selected=Number(el.dataset.id);customText=null;document.querySelectorAll('.song').forEach(s=>s.classList.toggle('selected',s===el));reset()}));
+$('search').addEventListener('input',()=>{const q=$('search').value.trim().toLowerCase();let count=0;document.querySelectorAll('.song').forEach(el=>{const s=samples[Number(el.dataset.id)];const show=(s.title.toLowerCase().includes(q)||'lyrickey 샘플'.includes(q))&&(activeFilter==='all'||el.dataset.diff===activeFilter);el.style.display=show?'flex':'none';if(show)count++});let empty=$('emptySongs');if(!count){if(!empty){empty=document.createElement('div');empty.id='emptySongs';empty.className='empty-results';empty.textContent='검색 결과가 없어요.';$('songList').appendChild(empty)}}else if(empty)empty.remove()});
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{activeFilter=btn.dataset.filter;document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));$('search').dispatchEvent(new Event('input'))}));
+function videoId(url){try{const u=new URL(url);if(u.hostname==='youtu.be')return u.pathname.slice(1).split('/')[0];if(u.hostname.endsWith('youtube.com')){if(u.pathname==='/watch')return u.searchParams.get('v');const m=u.pathname.match(/\/(embed|shorts|live)\/([^/?]+)/);return m?m[2]:null}}catch{}return null}
+$('urlForm').addEventListener('submit',e=>{e.preventDefault();const id=videoId($('youtubeUrl').value.trim());if(!id||!/^[\w-]{11}$/.test(id)){toast('올바른 YouTube 영상 주소를 입력해 주세요.');return}const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+id+'?playsinline=1&rel=0';frame.title='YouTube 공식 영상 플레이어';frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;const holder=$('playerFrame');holder.innerHTML='';holder.appendChild(frame);toast('공식 플레이어를 연결했어요. 재생은 영상에서 직접 눌러 주세요.')});
+$('howBtn').addEventListener('click',()=>toast('곡 선택 → 문장 입력 → 정확도 확인. 영상은 URL 연결 후 플레이어에서 직접 재생해요.'));
+renderLyric();
+</script>
+</body>
+</html>
